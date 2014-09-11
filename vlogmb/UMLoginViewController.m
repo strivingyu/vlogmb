@@ -36,19 +36,19 @@
         
         if ([message isEqualToString:@"登陆成功"])
         {
-            UIAlertView *alertView2=[[UIAlertView alloc] initWithTitle: @"登陆成功" message:@"登陆成功" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alertView2 show];
+            [self performSegueWithIdentifier:@"login" sender:self];
         }
         else
         {
             UIAlertView *alertView2=[[UIAlertView alloc] initWithTitle: @"登陆失败" message:@"用户名或密码错误" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alertView2 show];
+           
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"网络不通" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alertView show];
-    }];
+           }];
     
     [operation start];
     
@@ -75,15 +75,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+
+//#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
+//}
 
 @end

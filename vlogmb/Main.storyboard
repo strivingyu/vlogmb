@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13A3017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eNT-K2-Vge">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13A3017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HHw-d7-Qrh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -53,7 +53,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOs-Cr-B4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="-2047"/>
+            <point key="canvasLocation" x="209" y="-2085"/>
         </scene>
         <!--Login View Controller - 用户登录-->
         <scene sceneID="aPm-cu-B2c">
@@ -95,18 +95,17 @@
                                 <rect key="frame" x="20" y="179" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="登    录"/>
+                                <state key="normal" title="登       录"/>
                                 <connections>
                                     <action selector="login:" destination="HHw-d7-Qrh" eventType="touchUpInside" id="70U-Zl-kHx"/>
-                                    <segue destination="v0A-iy-gZz" kind="modal" id="hin-pj-qvV"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tgC-40-UGz">
-                                <rect key="frame" x="160" y="217" width="51" height="31"/>
+                                <rect key="frame" x="160" y="220" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="记住用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNV-pb-sDN">
-                                <rect key="frame" x="212" y="222" width="88" height="21"/>
+                                <rect key="frame" x="212" y="225" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -128,29 +127,12 @@
                     <connections>
                         <outlet property="password" destination="z36-WB-cpA" id="6gt-jj-kSS"/>
                         <outlet property="username" destination="i7F-7a-izC" id="mch-fU-k6o"/>
+                        <segue destination="v0A-iy-gZz" kind="modal" identifier="login" id="WkL-Cs-VCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnu-SM-Rdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="-2047"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pla-S0-6HI">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eNT-K2-Vge" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IHP-rc-4NF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="HHw-d7-Qrh" kind="relationship" relationship="rootViewController" id="3NR-RW-Ogi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aAK-uT-dfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-290" y="-2047"/>
+            <point key="canvasLocation" x="-239" y="-2085"/>
         </scene>
         <!--Navigation Controller - 任务-->
         <scene sceneID="6rM-wS-6Ny">
@@ -951,7 +933,4 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="3NR-RW-Ogi"/>
-    </inferredMetricsTieBreakers>
 </document>
