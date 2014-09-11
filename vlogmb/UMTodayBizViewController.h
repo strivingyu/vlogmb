@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface UMTodayBizViewController : UIViewController
-
+{
+    NSString *dateString;
+    NSDate *currentDate;
+}
+@property (weak, nonatomic) IBOutlet UILabel *currentDate;
+@property (weak, nonatomic) IBOutlet UILabel *totalOrderNum;
+- (IBAction)previousDay:(id)sender;
+- (IBAction)nextDay:(id)sender;
+-(void) getTotalOrderNumByDate:(NSString *)dateString;
 @end
