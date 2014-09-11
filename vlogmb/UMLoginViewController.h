@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UMLoginViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UISwitch *remember;
+-(NSString *)dataFilePath;
 
 @end

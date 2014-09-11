@@ -7,11 +7,12 @@
 //
 
 #import "UMLoginViewController.h"
+#import "UMAppDelegate.h"
 #import "AFNetworking.h"
 
 @interface UMLoginViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *password;
+
+
 
 @end
 
@@ -36,6 +37,22 @@
         
         if ([message isEqualToString:@"登陆成功"])
         {
+            //在全局变量中保存用户所在分公司id
+            NSNumber *branchcompanyid=(NSNumber *)[json objectForKey:@"branchcompanyid"];
+            UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
+            app.branchcompanyid=branchcompanyid;
+            
+            //如果选择了记住密码，则把用户名和密码保存着文件中
+            if ([self.remember isOn]) {
+                //NSMutableArray *array=[[NSMutableArray alloc] init];
+               /// [array addObject:uname];
+               /// [array addObject:pwd];
+              ///  [array writeToFile:[self dataFilePath] atomically:YES];
+                NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+                [userDefaults setObject:uname forKey:@"username"];
+                [userDefaults setObject:pwd forKey:@"password"];
+                [userDefaults synchronize];
+            }
             [self performSegueWithIdentifier:@"login" sender:self];
         }
         else
@@ -63,10 +80,34 @@
     return self;
 }
 
+-(NSString *)dataFilePath
+{
+    //常量NSDocumentDirectory表示我们正在查找Documents目录，NSUserDomainMask表示把搜索范围定在应用程序沙盒中
+    //YES表示希望该函数能查看用户主目录
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask,YES);
+    NSString *documentDirectory=[paths objectAtIndex:0];
+    return [documentDirectory stringByAppendingPathComponent:@"appdata.txt"];
+}
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //检查数据文件是否存在，不存在则不加载
+   // NSString *filePath=[self dataFilePath];
+   // if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+   // {
+       // NSArray *array=[[NSArray alloc] initWithContentsOfFile:filePath];
+       // self.username.text=[array objectAtIndex:0];
+       // self.password.text=[array objectAtIndex:1];
+         NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+         self.username.text=[userDefaults stringForKey:@"username"];
+         self.password.text=[userDefaults stringForKey:@"password"];
+  //  }
 }
 
 - (void)didReceiveMemoryWarning
