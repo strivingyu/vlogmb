@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UMDesignateDayBizViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *totalOrderNum;
+- (IBAction)getTotalOrderNum:(id)sender;
+-(void) getTotalOrderNumByDate:(NSString *)dateString;
 @end
