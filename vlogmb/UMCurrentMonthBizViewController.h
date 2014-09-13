@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface UMCurrentMonthBizViewController : UIViewController
+{
+    NSString *dateString;
+    NSDate *currentDate;
+}
+@property (weak, nonatomic) IBOutlet UILabel *month;
 
+@property (weak, nonatomic) IBOutlet UILabel *totalOrderNum;
+- (IBAction)previousMonth:(id)sender;
+- (IBAction)nextMonth:(id)sender;
+-(void) getTotalOrderNumByMonth:(NSString *)dateString;
 @end

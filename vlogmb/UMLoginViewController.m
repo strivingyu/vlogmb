@@ -20,7 +20,7 @@
 - (IBAction)login:(id)sender {
     NSString *uname=_username.text;
     NSString *pwd=_password.text;
-    NSString *string=[[[@"http://192.168.1.229:8080/vlogchinafreightsystem/accountAction!login.action?username=" stringByAppendingString:uname] stringByAppendingString:@"&password="] stringByAppendingString:pwd];
+    NSString *string=[[[@"http://192.168.123.22:8080/vlogchinafreightsystem/accountAction!login.action?username=" stringByAppendingString:uname] stringByAppendingString:@"&password="] stringByAppendingString:pwd];
     NSURL *url=[NSURL URLWithString:string];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     
