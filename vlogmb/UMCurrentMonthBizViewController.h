@@ -19,4 +19,5 @@
 - (IBAction)previousMonth:(id)sender;
 - (IBAction)nextMonth:(id)sender;
 -(void) getTotalOrderNumByMonth:(NSString *)dateString;
+-(void) listAirorderNumByMonth:(NSString *)dateString;
 @end

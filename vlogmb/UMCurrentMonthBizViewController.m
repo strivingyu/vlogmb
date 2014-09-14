@@ -41,49 +41,10 @@
     
     self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
     [self getTotalOrderNumByMonth:dateString];
+    [self listAirorderNumByMonth:dateString];
     
     
-    
-    //显示图表
-    // test line chart
-    NSArray* plottingDataValues1 =@[@22, @33, @12, @23,@43, @32,@53, @33, @54,@55, @43];
-    NSArray* plottingDataValues2 =@[@24, @23, @22, @20,@53, @22,@33, @33, @54,@58, @43];
-    
-    self.lineChartView.max = 58;
-    self.lineChartView.min = 12;
-    
-    
-    self.lineChartView.interval = (self.lineChartView.max-self.lineChartView.min)/5;
-    
-    NSMutableArray* yAxisValues = [@[] mutableCopy];
-    for (int i=0; i<6; i++) {
-        NSString* str = [NSString stringWithFormat:@"%.2f", self.lineChartView.min+self.lineChartView.interval*i];
-        [yAxisValues addObject:str];
     }
-    
-    self.lineChartView.xAxisValues = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7", @"8", @"9",@"10", @"11"];
-    self.lineChartView.yAxisValues = yAxisValues;
-    self.lineChartView.axisLeftLineWidth = 39;
-    
-    
-    PNPlot *plot1 = [[PNPlot alloc] init];
-    plot1.plottingValues = plottingDataValues1;
-    
-    plot1.lineColor = [UIColor blueColor];
-    plot1.lineWidth = 0.5;
-    
-    [self.lineChartView addPlot:plot1];
-    
-    
-    PNPlot *plot2 = [[PNPlot alloc] init];
-    
-    plot2.plottingValues = plottingDataValues2;
-    
-    plot2.lineColor = [UIColor redColor];
-    plot2.lineWidth = 1;
-    
-    [self.lineChartView  addPlot:plot2];
-}
 
 -(void) getTotalOrderNumByMonth:(NSString *)dateString
 {
@@ -114,6 +75,112 @@
     [operation start];
 }
 
+-(void) listAirorderNumByMonth:(NSString *)dateString
+{
+    UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
+    NSNumber *branchcompanyid= app.branchcompanyid;
+    
+    int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
+    int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
+    NSString *string=[[[[[@"http://192.168.31.166:8080/vlogchinafreightsystem/airorderAction!listAirorderNumByMonth.action?branchcompanyid=" stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
+    NSURL *url=[NSURL URLWithString:string];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+    // operation.responseSerializer=[AFJSONResponseSerializer serializer];
+    operation.responseSerializer=[AFHTTPResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        NSData *responseData=(NSData *)responseObject;
+       
+        NSArray *json=[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+       
+        NSMutableArray *dayArray=[[NSMutableArray alloc] init];
+        NSMutableArray *numberArray=[[NSMutableArray alloc] init];
+        
+        for(int i=0;i<[json count];i++)
+        {
+            NSDictionary *one=[json objectAtIndex:i];
+            
+          
+            [dayArray addObject:[one objectForKey:@"day"]];
+            
+            id temp=[one objectForKey:@"number"];
+            NSNumber *num=temp;
+            [numberArray addObject:num];
+        }
+        
+        //显示图表
+        // test line chart
+        NSArray* plottingDataValues1 =numberArray;
+  
+        //获取numberArray的最大值和最小值
+        int max=0;
+        int min=0;
+        
+        for(int i=0;i<[numberArray count];i++)
+        {
+            id temp=[numberArray objectAtIndex:i];
+            NSNumber *num=temp;
+            if ([num intValue]>max) {
+                max=[num intValue];
+                if(min==0)
+                {
+                    min=max;
+                }
+            }
+            else
+            {
+                if([num intValue]<min)
+                {
+                    min=[num intValue];
+                }
+            }
+        }
+        
+        self.lineChartView.max = max;
+        self.lineChartView.min = min;
+        
+        
+      //  self.lineChartView.interval = (self.lineChartView.max-self.lineChartView.min)/5;
+        self.lineChartView.interval = 1;
+        
+        NSMutableArray* yAxisValues = [@[] mutableCopy];
+        
+        if(max-min<6)
+        {
+            for (int i=0; i<6; i++) {
+                NSString* str = [NSString stringWithFormat:@"%d", i];
+                [yAxisValues addObject:str];
+            }
+        }
+        else
+        {
+            for (int i=0; i<max-min; i++) {
+                NSString* str = [NSString stringWithFormat:@"%.2f", self.lineChartView.min+self.lineChartView.interval*i];
+                [yAxisValues addObject:str];
+            }
+        }
+        
+        self.lineChartView.xAxisValues = dayArray;
+        self.lineChartView.yAxisValues = yAxisValues;
+        self.lineChartView.axisLeftLineWidth = 39;
+        
+        
+        PNPlot *plot1 = [[PNPlot alloc] init];
+        plot1.plottingValues = plottingDataValues1;
+        
+        plot1.lineColor = [UIColor blueColor];
+        plot1.lineWidth = 0.5;
+        [self.lineChartView addPlot:plot1];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"网络不通" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    [operation start];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -170,6 +237,8 @@
     
     self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
     [self getTotalOrderNumByMonth:dateString];
+    [self listAirorderNumByMonth:dateString];
+
 }
 
 - (IBAction)nextMonth:(id)sender {
@@ -211,5 +280,7 @@
     
     self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
     [self getTotalOrderNumByMonth:dateString];
+    [self listAirorderNumByMonth:dateString];
+
 }
 @end
