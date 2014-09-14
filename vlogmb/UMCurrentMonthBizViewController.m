@@ -171,8 +171,9 @@
         PNPlot *plot1 = [[PNPlot alloc] init];
         plot1.plottingValues = plottingDataValues1;
         
-        plot1.lineColor = [UIColor blueColor];
-        plot1.lineWidth = 0.5;
+        plot1.lineColor = [UIColor redColor];
+        plot1.lineWidth = 1;
+        [self.lineChartView clearPlot];
         [self.lineChartView addPlot:plot1];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"网络不通" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];

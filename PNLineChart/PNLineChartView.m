@@ -131,9 +131,11 @@
         _plots = [NSMutableArray array];
     }
     
-    [self.plots addObject:newPlot];
     
+    [self.plots addObject:newPlot];
+    [self setNeedsDisplay];
     [self layoutIfNeeded];
+   
 }
 
 -(void)clearPlot{
