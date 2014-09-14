@@ -848,11 +848,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="nextMonth:" destination="kV0-A6-YS6" eventType="touchUpInside" id="8b0-sy-8UX"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jip-rD-CEQ" customClass="PNLineChartView">
+                                <rect key="frame" x="0.0" y="131" width="320" height="266"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="当月业务" id="zY4-nc-Y4T"/>
                     <connections>
+                       
+                        <outlet property="lineChartView" destination="Jip-rD-CEQ" id="zlB-RJ-LnU"/>
                         <outlet property="month" destination="0hi-fl-KGL" id="QBm-fO-4uB"/>
                         <outlet property="searchDisplayController" destination="cqq-gx-ECf" id="oIe-bm-Duh"/>
                         <outlet property="totalOrderNum" destination="hQO-wH-RgL" id="ocM-jT-BnV"/>
@@ -953,7 +960,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHW-4x-EwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3678" y="-1720"/>
+            <point key="canvasLocation" x="3673" y="-1450"/>
         </scene>
         <!--Overdue Unfinish View Controller - 超时未完成订单-->
         <scene sceneID="ZEQ-G2-ovd">

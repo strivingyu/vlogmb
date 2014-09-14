@@ -9,9 +9,12 @@
 #import "UMCurrentMonthBizViewController.h"
 #import "UMAppDelegate.h"
 #import "AFNetworking.h"
+#import "PNLineChartView.h"
+#import "PNPlot.h"
 
 @interface UMCurrentMonthBizViewController ()
 
+@property (weak, nonatomic) IBOutlet PNLineChartView *lineChartView;
 @end
 
 @implementation UMCurrentMonthBizViewController
@@ -38,6 +41,48 @@
     
     self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
     [self getTotalOrderNumByMonth:dateString];
+    
+    
+    
+    //显示图表
+    // test line chart
+    NSArray* plottingDataValues1 =@[@22, @33, @12, @23,@43, @32,@53, @33, @54,@55, @43];
+    NSArray* plottingDataValues2 =@[@24, @23, @22, @20,@53, @22,@33, @33, @54,@58, @43];
+    
+    self.lineChartView.max = 58;
+    self.lineChartView.min = 12;
+    
+    
+    self.lineChartView.interval = (self.lineChartView.max-self.lineChartView.min)/5;
+    
+    NSMutableArray* yAxisValues = [@[] mutableCopy];
+    for (int i=0; i<6; i++) {
+        NSString* str = [NSString stringWithFormat:@"%.2f", self.lineChartView.min+self.lineChartView.interval*i];
+        [yAxisValues addObject:str];
+    }
+    
+    self.lineChartView.xAxisValues = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7", @"8", @"9",@"10", @"11"];
+    self.lineChartView.yAxisValues = yAxisValues;
+    self.lineChartView.axisLeftLineWidth = 39;
+    
+    
+    PNPlot *plot1 = [[PNPlot alloc] init];
+    plot1.plottingValues = plottingDataValues1;
+    
+    plot1.lineColor = [UIColor blueColor];
+    plot1.lineWidth = 0.5;
+    
+    [self.lineChartView addPlot:plot1];
+    
+    
+    PNPlot *plot2 = [[PNPlot alloc] init];
+    
+    plot2.plottingValues = plottingDataValues2;
+    
+    plot2.lineColor = [UIColor redColor];
+    plot2.lineWidth = 1;
+    
+    [self.lineChartView  addPlot:plot2];
 }
 
 -(void) getTotalOrderNumByMonth:(NSString *)dateString
@@ -47,7 +92,7 @@
     
     int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
     int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
-    NSString *string=[[[[[@"http://192.168.123.22:8080/vlogchinafreightsystem/airorderAction!countNewOrderByMonth.action?branchcompanyid=" stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
+    NSString *string=[[[[[@"http://192.168.31.166:8080/vlogchinafreightsystem/airorderAction!countNewOrderByMonth.action?branchcompanyid=" stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
     NSURL *url=[NSURL URLWithString:string];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     
@@ -91,7 +136,7 @@
     int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
     int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
     int day=[[dateString substringWithRange:NSMakeRange(8, 2)] intValue];
-    if (month==1) {
+    if(month==1) {
         year=year-1;
         month=12;
     }
@@ -101,7 +146,7 @@
     }
     
     NSString *monthStr;
-    if(month>10)
+    if(month>=10)
     {
         monthStr=[NSString stringWithFormat:@"%d",month];
     }
@@ -110,7 +155,7 @@
         monthStr=[@"0" stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
     }
     NSString *dayStr;
-    if(day>10)
+    if(day>=10)
     {
         dayStr=[NSString stringWithFormat:@"%d",day];
     }
@@ -124,14 +169,15 @@
     
     
     self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
-    [self getTotalOrderNumByMonth:dateString];}
+    [self getTotalOrderNumByMonth:dateString];
+}
 
 - (IBAction)nextMonth:(id)sender {
     
     int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
     int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
     int day=[[dateString substringWithRange:NSMakeRange(8, 2)] intValue];
-    if (month==12) {
+    if(month==12) {
         year=year+1;
         month=1;
     }
@@ -141,7 +187,7 @@
     }
     
     NSString *monthStr;
-    if(month>10)
+    if(month>=10)
     {
         monthStr=[NSString stringWithFormat:@"%d",month];
     }
@@ -150,7 +196,7 @@
         monthStr=[@"0" stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
     }
     NSString *dayStr;
-    if(day>10)
+    if(day>=10)
     {
         dayStr=[NSString stringWithFormat:@"%d",day];
     }
@@ -164,6 +210,6 @@
     
     
     self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
-    [self getTotalOrderNumByMonth:dateString];}
+    [self getTotalOrderNumByMonth:dateString];
 }
 @end

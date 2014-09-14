@@ -54,6 +54,8 @@
 		3A54FEF519B84E9A00D2648A /* UMOverdue30UnWriteoffReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FEF419B84E9A00D2648A /* UMOverdue30UnWriteoffReceiveViewController.m */; };
 		3A54FEF819B84EC400D2648A /* UMOverdue60UnWriteoffReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FEF719B84EC400D2648A /* UMOverdue60UnWriteoffReceiveViewController.m */; };
 		3A54FEFB19B84EDD00D2648A /* UMAllUnWriteoffPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FEFA19B84EDD00D2648A /* UMAllUnWriteoffPayViewController.m */; };
+		3A6B690019C51ECD00F2A249 /* PNLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B68FD19C51ECD00F2A249 /* PNLineChartView.m */; };
+		3A6B690119C51ECD00F2A249 /* PNPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B68FF19C51ECD00F2A249 /* PNPlot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,10 @@
 		3A54FEF719B84EC400D2648A /* UMOverdue60UnWriteoffReceiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMOverdue60UnWriteoffReceiveViewController.m; sourceTree = "<group>"; };
 		3A54FEF919B84EDD00D2648A /* UMAllUnWriteoffPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMAllUnWriteoffPayViewController.h; sourceTree = "<group>"; };
 		3A54FEFA19B84EDD00D2648A /* UMAllUnWriteoffPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMAllUnWriteoffPayViewController.m; sourceTree = "<group>"; };
+		3A6B68FC19C51ECD00F2A249 /* PNLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChartView.h; sourceTree = "<group>"; };
+		3A6B68FD19C51ECD00F2A249 /* PNLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChartView.m; sourceTree = "<group>"; };
+		3A6B68FE19C51ECD00F2A249 /* PNPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPlot.h; sourceTree = "<group>"; };
+		3A6B68FF19C51ECD00F2A249 /* PNPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPlot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 		3A10ED2B19AA075600A3E05B = {
 			isa = PBXGroup;
 			children = (
+				3A6B68FB19C51ECD00F2A249 /* PNLineChart */,
 				3A10ED3D19AA075600A3E05B /* vlogmb */,
 				3A10ED5619AA075600A3E05B /* vlogmbTests */,
 				3A10ED3619AA075600A3E05B /* Frameworks */,
@@ -332,6 +339,17 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		3A6B68FB19C51ECD00F2A249 /* PNLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				3A6B68FC19C51ECD00F2A249 /* PNLineChartView.h */,
+				3A6B68FD19C51ECD00F2A249 /* PNLineChartView.m */,
+				3A6B68FE19C51ECD00F2A249 /* PNPlot.h */,
+				3A6B68FF19C51ECD00F2A249 /* PNPlot.m */,
+			);
+			path = PNLineChart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,6 +471,7 @@
 				3A3336F519C05521000A5B90 /* AFURLRequestSerialization.m in Sources */,
 				3A3336F219C05521000A5B90 /* AFNetworkReachabilityManager.m in Sources */,
 				3A54FEF519B84E9A00D2648A /* UMOverdue30UnWriteoffReceiveViewController.m in Sources */,
+				3A6B690119C51ECD00F2A249 /* PNPlot.m in Sources */,
 				3A3336FC19C05521000A5B90 /* UIImageView+AFNetworking.m in Sources */,
 				3A54FEF819B84EC400D2648A /* UMOverdue60UnWriteoffReceiveViewController.m in Sources */,
 				3A10ED4419AA075600A3E05B /* main.m in Sources */,
@@ -463,6 +482,7 @@
 				3A3336FF19C05521000A5B90 /* UIWebView+AFNetworking.m in Sources */,
 				3A54FEF219B84E7600D2648A /* UMAllUnWriteoffReceiveViewController.m in Sources */,
 				3A3336F719C05521000A5B90 /* AFURLSessionManager.m in Sources */,
+				3A6B690019C51ECD00F2A249 /* PNLineChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
