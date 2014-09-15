@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PNLineChartView.h"
 
 @interface UMCurrentYearBizViewController : UIViewController
+{
+    NSDate *currentDate;
+}
+@property(nonatomic,strong)NSString *dateString;
+@property (weak, nonatomic) IBOutlet UILabel *lblYear;
+@property (weak, nonatomic) IBOutlet UILabel *totalOrderNum;
+@property (weak, nonatomic) IBOutlet PNLineChartView *lineChartView;
+- (IBAction)previousYear:(id)sender;
+- (IBAction)nextYear:(id)sender;
 
 @end

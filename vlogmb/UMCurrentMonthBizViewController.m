@@ -32,16 +32,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //获取当前日期
-    NSDate *today=[NSDate date];
-    currentDate=today;
-    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY-MM-dd"];
-    dateString=[formatter stringFromDate:today];
     
-    self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
-    [self getTotalOrderNumByMonth:dateString];
-    [self listAirorderNumByMonth:dateString];
+    if (_dateString==nil) {
+        //获取当前日期
+        NSDate *today=[NSDate date];
+        currentDate=today;
+        NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"YYYY-MM-dd"];
+        _dateString=[formatter stringFromDate:today];
+    }
+    
+    self.month.text=[[_dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
+    [self getTotalOrderNumByMonth:_dateString];
+    [self listAirorderNumByMonth:_dateString];
     
     
     }
@@ -201,9 +204,9 @@
 */
 
 - (IBAction)previousMonth:(id)sender {
-    int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
-    int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
-    int day=[[dateString substringWithRange:NSMakeRange(8, 2)] intValue];
+    int year=[[_dateString substringWithRange:NSMakeRange(0, 4)] intValue];
+    int month=[[_dateString substringWithRange:NSMakeRange(5, 2)] intValue];
+    int day=[[_dateString substringWithRange:NSMakeRange(8, 2)] intValue];
     if(month==1) {
         year=year-1;
         month=12;
@@ -233,20 +236,20 @@
     }
     
     
-    dateString=[[[[[NSString stringWithFormat:@"%d",year] stringByAppendingString:@"-"] stringByAppendingString:monthStr] stringByAppendingString:@"-"] stringByAppendingString:dayStr];
+    _dateString=[[[[[NSString stringWithFormat:@"%d",year] stringByAppendingString:@"-"] stringByAppendingString:monthStr] stringByAppendingString:@"-"] stringByAppendingString:dayStr];
     
     
-    self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
-    [self getTotalOrderNumByMonth:dateString];
-    [self listAirorderNumByMonth:dateString];
+    self.month.text=[[_dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
+    [self getTotalOrderNumByMonth:_dateString];
+    [self listAirorderNumByMonth:_dateString];
 
 }
 
 - (IBAction)nextMonth:(id)sender {
     
-    int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
-    int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
-    int day=[[dateString substringWithRange:NSMakeRange(8, 2)] intValue];
+    int year=[[_dateString substringWithRange:NSMakeRange(0, 4)] intValue];
+    int month=[[_dateString substringWithRange:NSMakeRange(5, 2)] intValue];
+    int day=[[_dateString substringWithRange:NSMakeRange(8, 2)] intValue];
     if(month==12) {
         year=year+1;
         month=1;
@@ -276,12 +279,12 @@
     }
     
     
-    dateString=[[[[[NSString stringWithFormat:@"%d",year] stringByAppendingString:@"-"] stringByAppendingString:monthStr] stringByAppendingString:@"-"] stringByAppendingString:dayStr];
+    _dateString=[[[[[NSString stringWithFormat:@"%d",year] stringByAppendingString:@"-"] stringByAppendingString:monthStr] stringByAppendingString:@"-"] stringByAppendingString:dayStr];
     
     
-    self.month.text=[[dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
-    [self getTotalOrderNumByMonth:dateString];
-    [self listAirorderNumByMonth:dateString];
+    self.month.text=[[_dateString substringWithRange:NSMakeRange(5, 2)] stringByAppendingString:@"月"];
+    [self getTotalOrderNumByMonth:_dateString];
+    [self listAirorderNumByMonth:_dateString];
 
 }
 @end

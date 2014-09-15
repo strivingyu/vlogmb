@@ -7,7 +7,10 @@
 //
 
 #import "UMCurrentYearBizViewController.h"
-
+#import "UMAppDelegate.h"
+#import "AFNetworking.h"
+#import "PNLineChartView.h"
+#import "PNPlot.h"
 @interface UMCurrentYearBizViewController ()
 
 @end
@@ -27,6 +30,155 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (_dateString==nil) {
+        //获取当前日期
+        NSDate *today=[NSDate date];
+        currentDate=today;
+        NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"YYYY-MM-dd"];
+        _dateString=[formatter stringFromDate:today];
+    }
+    
+    self.lblYear.text=[[_dateString substringWithRange:NSMakeRange(0, 4)] stringByAppendingString:@"年"];
+    [self getTotalOrderNumByYear:_dateString];
+    [self listAirorderNumByYear:_dateString];
+}
+
+-(void) getTotalOrderNumByYear:(NSString *)dateString
+{
+    UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
+    NSNumber *branchcompanyid= app.branchcompanyid;
+    
+    int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
+ //   int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
+    NSString *string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderAction!countNewOrderByYear.action?branchcompanyid="] stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]];
+    NSURL *url=[NSURL URLWithString:string];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+    // operation.responseSerializer=[AFJSONResponseSerializer serializer];
+    operation.responseSerializer=[AFHTTPResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        NSData *responseData=(NSData *)responseObject;
+        NSDictionary *json=[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        NSString *numOfYearNewOrder=(NSString *)[json objectForKey:@"numOfYearNewOrder"];     //   NSString
+        self.totalOrderNum.text=numOfYearNewOrder;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"网络不通" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    [operation start];
+}
+
+-(void) listAirorderNumByYear:(NSString *)dateString
+{
+    UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
+    NSNumber *branchcompanyid= app.branchcompanyid;
+    
+    int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
+   // int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
+    NSString *string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderAction!listAirorderNumByYear.action?branchcompanyid="] stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]];
+    NSURL *url=[NSURL URLWithString:string];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+    // operation.responseSerializer=[AFJSONResponseSerializer serializer];
+    operation.responseSerializer=[AFHTTPResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        NSData *responseData=(NSData *)responseObject;
+        
+        NSArray *json=[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        
+        NSMutableArray *monthArray=[[NSMutableArray alloc] init];
+        NSMutableArray *numberArray=[[NSMutableArray alloc] init];
+        
+        for(int i=0;i<[json count];i++)
+        {
+            NSDictionary *one=[json objectAtIndex:i];
+            
+            
+            [monthArray addObject:[one objectForKey:@"month"]];
+            
+            id temp=[one objectForKey:@"number"];
+            NSNumber *num=temp;
+            [numberArray addObject:num];
+        }
+        
+        //显示图表
+        // test line chart
+        NSArray* plottingDataValues1 =numberArray;
+        
+        //获取numberArray的最大值和最小值
+        int max=0;
+        int min=0;
+        
+        for(int i=0;i<[numberArray count];i++)
+        {
+            id temp=[numberArray objectAtIndex:i];
+            NSNumber *num=temp;
+            if ([num intValue]>max) {
+                max=[num intValue];
+                if(min==0)
+                {
+                    min=max;
+                }
+            }
+            else
+            {
+                if([num intValue]<min)
+                {
+                    min=[num intValue];
+                }
+            }
+        }
+        
+        self.lineChartView.max = max;
+        self.lineChartView.min = min;
+        
+        
+        //  self.lineChartView.interval = (self.lineChartView.max-self.lineChartView.min)/5;
+        self.lineChartView.interval = 1;
+        
+        NSMutableArray* yAxisValues = [@[] mutableCopy];
+        
+        if(max-min<6)
+        {
+            for (int i=0; i<6; i++) {
+                NSString* str = [NSString stringWithFormat:@"%d", i];
+                [yAxisValues addObject:str];
+            }
+        }
+        else
+        {
+            for (int i=0; i<max-min; i++) {
+                NSString* str = [NSString stringWithFormat:@"%.2f", self.lineChartView.min+self.lineChartView.interval*i];
+                [yAxisValues addObject:str];
+            }
+        }
+        
+        self.lineChartView.xAxisValues = monthArray;
+        self.lineChartView.yAxisValues = yAxisValues;
+        self.lineChartView.axisLeftLineWidth = 39;
+        
+        
+        PNPlot *plot1 = [[PNPlot alloc] init];
+        plot1.plottingValues = plottingDataValues1;
+        
+        plot1.lineColor = [UIColor redColor];
+        plot1.lineWidth = 1;
+        [self.lineChartView clearPlot];
+        [self.lineChartView addPlot:plot1];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"网络不通" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    [operation start];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,4 +198,72 @@
 }
 */
 
+- (IBAction)previousYear:(id)sender {
+    int year=[[_dateString substringWithRange:NSMakeRange(0, 4)] intValue];
+    int month=[[_dateString substringWithRange:NSMakeRange(5, 2)] intValue];
+    int day=[[_dateString substringWithRange:NSMakeRange(8, 2)] intValue];
+    year=year-1;
+    
+    NSString *monthStr;
+    if(month>=10)
+    {
+        monthStr=[NSString stringWithFormat:@"%d",month];
+    }
+    else
+    {
+        monthStr=[@"0" stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
+    }
+    NSString *dayStr;
+    if(day>=10)
+    {
+        dayStr=[NSString stringWithFormat:@"%d",day];
+    }
+    else
+    {
+        dayStr=[@"0" stringByAppendingString:[NSString stringWithFormat:@"%d",day]];
+    }
+    
+    
+    _dateString=[[[[[NSString stringWithFormat:@"%d",year] stringByAppendingString:@"-"] stringByAppendingString:monthStr] stringByAppendingString:@"-"] stringByAppendingString:dayStr];
+    
+    
+    self.lblYear.text=[[_dateString substringWithRange:NSMakeRange(0, 4)] stringByAppendingString:@"年"];
+    [self getTotalOrderNumByYear:_dateString];
+    [self listAirorderNumByYear:_dateString];
+}
+
+- (IBAction)nextYear:(id)sender {
+    int year=[[_dateString substringWithRange:NSMakeRange(0, 4)] intValue];
+    int month=[[_dateString substringWithRange:NSMakeRange(5, 2)] intValue];
+    int day=[[_dateString substringWithRange:NSMakeRange(8, 2)] intValue];
+    
+    year=year+1;
+    
+    NSString *monthStr;
+    if(month>=10)
+    {
+        monthStr=[NSString stringWithFormat:@"%d",month];
+    }
+    else
+    {
+        monthStr=[@"0" stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
+    }
+    NSString *dayStr;
+    if(day>=10)
+    {
+        dayStr=[NSString stringWithFormat:@"%d",day];
+    }
+    else
+    {
+        dayStr=[@"0" stringByAppendingString:[NSString stringWithFormat:@"%d",day]];
+    }
+    
+    
+    _dateString=[[[[[NSString stringWithFormat:@"%d",year] stringByAppendingString:@"-"] stringByAppendingString:monthStr] stringByAppendingString:@"-"] stringByAppendingString:dayStr];
+    
+    
+    self.lblYear.text=[[_dateString substringWithRange:NSMakeRange(0, 4)] stringByAppendingString:@"年"];
+    [self getTotalOrderNumByYear:_dateString];
+    [self listAirorderNumByYear:_dateString];
+}
 @end

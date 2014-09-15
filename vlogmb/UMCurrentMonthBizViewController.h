@@ -10,9 +10,9 @@
 
 @interface UMCurrentMonthBizViewController : UIViewController
 {
-    NSString *dateString;
     NSDate *currentDate;
 }
+@property(nonatomic,strong)NSString *dateString;
 @property (weak, nonatomic) IBOutlet UILabel *month;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalOrderNum;

@@ -45,9 +45,19 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSDate *sDate=self.selectDateView.date;
+    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    select=[formatter stringFromDate:sDate];
+    id destViewController=segue.destinationViewController;
+    [destViewController setValue:select forKey:@"dateString"];
 }
 
 
 - (IBAction)selectDate:(id)sender {
+    NSDate *sDate=self.selectDateView.date;
+    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    select=[formatter stringFromDate:sDate];
 }
 @end
