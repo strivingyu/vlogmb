@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UMAppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSNumber *branchcompanyid;
++(NSString *) basePath;
 @end

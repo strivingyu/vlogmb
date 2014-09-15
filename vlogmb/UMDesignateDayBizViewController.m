@@ -64,7 +64,7 @@
     int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
     int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
     int day=[[dateString substringWithRange:NSMakeRange(8, 2)] intValue];
-    NSString *string=[[[[[[[@"http://192.168.31.166:8080/vlogchinafreightsystem/airorderAction!countNewOrderByDay.action?branchcompanyid=" stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]] stringByAppendingString:@"&day="] stringByAppendingString:[NSString stringWithFormat:@"%d",day]];
+    NSString *string=[[[[[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderAction!countNewOrderByDay.action?branchcompanyid="] stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]] stringByAppendingString:@"&day="] stringByAppendingString:[NSString stringWithFormat:@"%d",day]];
     NSURL *url=[NSURL URLWithString:string];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     

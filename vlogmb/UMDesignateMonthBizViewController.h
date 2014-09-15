@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SRMonthPicker.h"
 
 @interface UMDesignateMonthBizViewController : UIViewController
+{
+    NSString *select;
+}
+@property (weak, nonatomic) IBOutlet SRMonthPicker *selectDateView;
+- (IBAction)selectDate:(id)sender;
 
 @end

@@ -53,7 +53,7 @@
     
     int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
     int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
-    NSString *string=[[[[[@"http://192.168.31.166:8080/vlogchinafreightsystem/airorderAction!countNewOrderByMonth.action?branchcompanyid=" stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
+    NSString *string=[[[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderAction!countNewOrderByMonth.action?branchcompanyid="] stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
     NSURL *url=[NSURL URLWithString:string];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     
@@ -82,7 +82,7 @@
     
     int year=[[dateString substringWithRange:NSMakeRange(0, 4)] intValue];
     int month=[[dateString substringWithRange:NSMakeRange(5, 2)] intValue];
-    NSString *string=[[[[[@"http://192.168.31.166:8080/vlogchinafreightsystem/airorderAction!listAirorderNumByMonth.action?branchcompanyid=" stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
+    NSString *string=[[[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderAction!listAirorderNumByMonth.action?branchcompanyid="] stringByAppendingString:[branchcompanyid stringValue]] stringByAppendingString:@"&year="] stringByAppendingString:[NSString stringWithFormat:@"%d",year]] stringByAppendingString:@"&month="] stringByAppendingString:[NSString stringWithFormat:@"%d",month]];
     NSURL *url=[NSURL URLWithString:string];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     

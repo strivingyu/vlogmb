@@ -7,9 +7,13 @@
 //
 
 #import "UMAppDelegate.h"
-
+ static NSString *BASEPATH=@"http://172.16.240.83:8080/vlogchinafreightsystem/";
 @implementation UMAppDelegate
 
++(NSString *) basePath
+{
+    return BASEPATH;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     return YES;

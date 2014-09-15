@@ -20,7 +20,7 @@
 - (IBAction)login:(id)sender {
     NSString *uname=_username.text;
     NSString *pwd=_password.text;
-    NSString *string=[[[@"http://192.168.31.166:8080/vlogchinafreightsystem/accountAction!login.action?username=" stringByAppendingString:uname] stringByAppendingString:@"&password="] stringByAppendingString:pwd];
+    NSString *string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"accountAction!login.action?username="] stringByAppendingString:uname] stringByAppendingString:@"&password="] stringByAppendingString:pwd];
     NSURL *url=[NSURL URLWithString:string];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     
