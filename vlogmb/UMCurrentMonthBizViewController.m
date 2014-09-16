@@ -146,13 +146,11 @@
         self.lineChartView.min = min;
         
         
-      //  self.lineChartView.interval = (self.lineChartView.max-self.lineChartView.min)/5;
-        self.lineChartView.interval = 1;
-        
         NSMutableArray* yAxisValues = [@[] mutableCopy];
         
         if(max-min<6)
         {
+            self.lineChartView.interval = 1;
             for (int i=0; i<6; i++) {
                 NSString* str = [NSString stringWithFormat:@"%d", i];
                 [yAxisValues addObject:str];
@@ -160,6 +158,7 @@
         }
         else
         {
+            self.lineChartView.interval = (self.lineChartView.max-self.lineChartView.min)/5;
             for (int i=0; i<max-min; i++) {
                 NSString* str = [NSString stringWithFormat:@"%.2f", self.lineChartView.min+self.lineChartView.interval*i];
                 [yAxisValues addObject:str];
