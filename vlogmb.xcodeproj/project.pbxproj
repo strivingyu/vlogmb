@@ -62,6 +62,8 @@
 		3A54FEFB19B84EDD00D2648A /* UMAllUnWriteoffPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A54FEFA19B84EDD00D2648A /* UMAllUnWriteoffPayViewController.m */; };
 		3A6B690019C51ECD00F2A249 /* PNLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B68FD19C51ECD00F2A249 /* PNLineChartView.m */; };
 		3A6B690119C51ECD00F2A249 /* PNPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B68FF19C51ECD00F2A249 /* PNPlot.m */; };
+		3AB6945B19C878E600B67915 /* UMModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6945A19C878E600B67915 /* UMModifyPasswordViewController.m */; };
+		3AB6946119C8826400B67915 /* UMSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6946019C8826400B67915 /* UMSettingTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +175,10 @@
 		3A6B68FD19C51ECD00F2A249 /* PNLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChartView.m; sourceTree = "<group>"; };
 		3A6B68FE19C51ECD00F2A249 /* PNPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNPlot.h; sourceTree = "<group>"; };
 		3A6B68FF19C51ECD00F2A249 /* PNPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPlot.m; sourceTree = "<group>"; };
+		3AB6945919C878E600B67915 /* UMModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMModifyPasswordViewController.h; sourceTree = "<group>"; };
+		3AB6945A19C878E600B67915 /* UMModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMModifyPasswordViewController.m; sourceTree = "<group>"; };
+		3AB6945F19C8826400B67915 /* UMSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSettingTableViewController.h; sourceTree = "<group>"; };
+		3AB6946019C8826400B67915 /* UMSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMSettingTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +281,10 @@
 				3A54FEFA19B84EDD00D2648A /* UMAllUnWriteoffPayViewController.m */,
 				3A3336C619C00117000A5B90 /* UMLoginViewController.h */,
 				3A3336C719C00117000A5B90 /* UMLoginViewController.m */,
+				3AB6945919C878E600B67915 /* UMModifyPasswordViewController.h */,
+				3AB6945A19C878E600B67915 /* UMModifyPasswordViewController.m */,
+				3AB6945F19C8826400B67915 /* UMSettingTableViewController.h */,
+				3AB6946019C8826400B67915 /* UMSettingTableViewController.m */,
 			);
 			path = vlogmb;
 			sourceTree = "<group>";
@@ -494,6 +504,7 @@
 				3A3336FB19C05521000A5B90 /* UIButton+AFNetworking.m in Sources */,
 				3A3336FA19C05521000A5B90 /* UIAlertView+AFNetworking.m in Sources */,
 				3A54FEDD19B84D7100D2648A /* UMDesignateDayBizViewController.m in Sources */,
+				3AB6946119C8826400B67915 /* UMSettingTableViewController.m in Sources */,
 				3A10ED4819AA075600A3E05B /* UMAppDelegate.m in Sources */,
 				3A54FEEC19B84E4000D2648A /* UMOverdueUnhandleViewController.m in Sources */,
 				3A3336F619C05521000A5B90 /* AFURLResponseSerialization.m in Sources */,
@@ -518,6 +529,7 @@
 				3A3336FC19C05521000A5B90 /* UIImageView+AFNetworking.m in Sources */,
 				3A11024719C7DA540081E93E /* ASFTableViewPrivateGlobals.m in Sources */,
 				3A54FEF819B84EC400D2648A /* UMOverdue60UnWriteoffReceiveViewController.m in Sources */,
+				3AB6945B19C878E600B67915 /* UMModifyPasswordViewController.m in Sources */,
 				3A10ED4419AA075600A3E05B /* main.m in Sources */,
 				3A3336EF19C05521000A5B90 /* AFHTTPRequestOperation.m in Sources */,
 				3A54FEEF19B84E5200D2648A /* UMOverdueUnfinishViewController.m in Sources */,

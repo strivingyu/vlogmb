@@ -41,7 +41,7 @@
             NSNumber *branchcompanyid=(NSNumber *)[json objectForKey:@"branchcompanyid"];
             UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
             app.branchcompanyid=branchcompanyid;
-            
+            app.username=uname;
             //如果选择了记住密码，则把用户名和密码保存着文件中
             if ([self.remember isOn]) {
                 //NSMutableArray *array=[[NSMutableArray alloc] init];
