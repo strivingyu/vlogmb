@@ -7,7 +7,7 @@
 //
 
 #import "UMAppDelegate.h"
- static NSString *BASEPATH=@"http://172.16.240.83:8080/vlogchinafreightsystem/";
+ static NSString *BASEPATH=@"http://192.168.31.166:8080/vlogchinafreightsystem/";
 @implementation UMAppDelegate
 
 +(NSString *) basePath

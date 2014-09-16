@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ASFTableView.h"
 @interface UMOverdue30UnWriteoffReceiveViewController : UIViewController
+@property (weak, nonatomic) IBOutlet ASFTableView *mASFTableView;
 
 @end

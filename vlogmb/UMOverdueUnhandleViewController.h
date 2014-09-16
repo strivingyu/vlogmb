@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASFTableView.h"
 
 @interface UMOverdueUnhandleViewController : UIViewController
+@property (weak, nonatomic) IBOutlet ASFTableView *mASFTableView;
 
 @end

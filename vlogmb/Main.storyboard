@@ -483,7 +483,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="56e-MX-f2T" kind="push" trigger="accessoryAction" id="T2e-q3-hL7"/>
+                                            <segue destination="56e-MX-f2T" kind="push" id="b9e-f7-fat"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xQN-7a-zTN" style="IBUITableViewCellStyleDefault" id="iuy-xc-31J">
@@ -503,7 +503,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NXb-oy-Es0" kind="push" trigger="accessoryAction" id="Dge-Ch-TcT"/>
+                                            <segue destination="NXb-oy-Es0" kind="push" id="ope-bR-qCV"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Txt-3C-BMH" style="IBUITableViewCellStyleDefault" id="igX-qG-6Ug">
@@ -523,7 +523,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="acH-Jt-Nfj" kind="push" trigger="accessoryAction" id="HVn-Wo-jN5"/>
+                                            <segue destination="acH-Jt-Nfj" kind="push" id="wSn-x2-CAI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jvK-ct-jPG" style="IBUITableViewCellStyleDefault" id="42d-L6-KgB">
@@ -543,7 +543,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="n9Q-EC-crZ" kind="push" trigger="accessoryAction" id="yXl-Wt-8Pd"/>
+                                            <segue destination="n9Q-EC-crZ" kind="push" id="Tw0-aK-VWd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="a4J-Y3-3GH" style="IBUITableViewCellStyleDefault" id="Wc1-YX-RlQ">
@@ -563,7 +563,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="7eZ-6g-2JF" kind="push" trigger="accessoryAction" id="dU3-tH-nnu"/>
+                                            <segue destination="7eZ-6g-2JF" kind="push" id="kGd-QG-CBl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="9c9-Hh-Xyr" style="IBUITableViewCellStyleDefault" id="OI8-Lj-V5c">
@@ -681,15 +681,25 @@
                     <view key="view" contentMode="scaleToFill" id="WSQ-HD-Bco">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-EV-7mS" customClass="ASFTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="超时未处理订单" id="269-OM-vbv"/>
+                    <connections>
+                        <outlet property="mASFTableView" destination="DKN-EV-7mS" id="wXC-DR-pJV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3u-XR-Nj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3647" y="-944"/>
+            <point key="canvasLocation" x="3184" y="-1657"/>
         </scene>
-        <!--All Un Writeoff Receive View Controller - 应收未核销-->
+        <!--All Un Writeoff Receive View Controller - 全部应收未核销-->
         <scene sceneID="1NO-5i-LEG">
             <objects>
                 <viewController id="acH-Jt-Nfj" customClass="UMAllUnWriteoffReceiveViewController" sceneMemberID="viewController">
@@ -700,13 +710,23 @@
                     <view key="view" contentMode="scaleToFill" id="8kp-Ns-OOT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95r-1D-46V" customClass="ASFTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="应收未核销" id="HYm-6T-aXw"/>
+                    <navigationItem key="navigationItem" title="全部应收未核销" id="HYm-6T-aXw"/>
+                    <connections>
+                        <outlet property="mASFTableView" destination="95r-1D-46V" id="7ZL-h2-18w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05A-NM-yjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3437" y="-234"/>
+            <point key="canvasLocation" x="531" y="-1244"/>
         </scene>
         <!--Overdue30 Un Writeoff Receive View Controller - 超期30天应收款-->
         <scene sceneID="FHn-MB-u9d">
@@ -719,13 +739,23 @@
                     <view key="view" contentMode="scaleToFill" id="F2N-oK-aub">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6a-Ts-Rjs" customClass="ASFTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="超期30天应收款" id="xYA-v4-dhr"/>
+                    <connections>
+                        <outlet property="mASFTableView" destination="f6a-Ts-Rjs" id="Y9r-mO-fxt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6L-gi-Rd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075" y="-148"/>
+            <point key="canvasLocation" x="1463" y="-616"/>
         </scene>
         <!--Overdue60 Un Writeoff Receive View Controller - 超期60天应收款-->
         <scene sceneID="1ef-fU-Nxw">
@@ -738,15 +768,25 @@
                     <view key="view" contentMode="scaleToFill" id="wb4-XT-Gdi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NzH-hE-Vwo" customClass="ASFTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="超期60天应收款" id="FXz-tG-zTf"/>
+                    <connections>
+                        <outlet property="mASFTableView" destination="NzH-hE-Vwo" id="bnb-LC-Y07"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rob-vb-PML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2479" y="-154"/>
+            <point key="canvasLocation" x="1631" y="-610"/>
         </scene>
-        <!--All Un Writeoff Pay View Controller - 应付未核销-->
+        <!--All Un Writeoff Pay View Controller - 全部应付未核销-->
         <scene sceneID="GP5-vF-uJQ">
             <objects>
                 <viewController id="Hm9-8W-vKN" customClass="UMAllUnWriteoffPayViewController" sceneMemberID="viewController">
@@ -757,13 +797,23 @@
                     <view key="view" contentMode="scaleToFill" id="HzQ-e2-6op">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YO6-MA-OwA" customClass="ASFTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="应付未核销" id="T34-JH-tB0"/>
+                    <navigationItem key="navigationItem" title="全部应付未核销" id="T34-JH-tB0"/>
+                    <connections>
+                        <outlet property="mASFTableView" destination="YO6-MA-OwA" id="Kwt-LU-1sJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp8-T2-5Je" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3019" y="-114"/>
+            <point key="canvasLocation" x="2355" y="-624"/>
         </scene>
         <!--Designate Day Biz View Controller - 指定日业务-->
         <scene sceneID="A2i-Ny-4Qf">
@@ -1037,7 +1087,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHW-4x-EwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3521" y="-1487"/>
+            <point key="canvasLocation" x="3313" y="-2809"/>
         </scene>
         <!--Overdue Unfinish View Controller - 超时未完成订单-->
         <scene sceneID="ZEQ-G2-ovd">
@@ -1050,13 +1100,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <view key="view" contentMode="scaleToFill" id="wVv-5F-fzh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qxv-f1-Agi" customClass="ASFTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="超时未完成订单" id="As7-0f-Tt7"/>
+                    <connections>
+                        <outlet property="mASFTableView" destination="Qxv-f1-Agi" id="t9j-VF-UHr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WdR-5K-UVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3575" y="-564"/>
+            <point key="canvasLocation" x="543" y="-668"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1065,6 +1125,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cu4-3a-C1t"/>
+        <segue reference="ZFR-au-vbZ"/>
     </inferredMetricsTieBreakers>
 </document>

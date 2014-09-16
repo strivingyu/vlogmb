@@ -21,6 +21,11 @@
 		3A10ED5D19AA075600A3E05B /* vlogmbTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A10ED5C19AA075600A3E05B /* vlogmbTests.m */; };
 		3A10ED6719AA082800A3E05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10ED6619AA082800A3E05B /* Main.storyboard */; };
 		3A11007B19C5AF070081E93E /* SRMonthPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11007A19C5AF070081E93E /* SRMonthPicker.m */; };
+		3A11024419C7DA540081E93E /* ASFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11023B19C7DA540081E93E /* ASFLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A11024519C7DA540081E93E /* ASFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11023D19C7DA540081E93E /* ASFTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A11024619C7DA540081E93E /* ASFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11023F19C7DA540081E93E /* ASFTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A11024719C7DA540081E93E /* ASFTableViewPrivateGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11024119C7DA540081E93E /* ASFTableViewPrivateGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A11024819C7DA540081E93E /* ASFTableViewPublicGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11024319C7DA540081E93E /* ASFTableViewPublicGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3A3336BD19C0002A000A5B90 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BC19C0002A000A5B90 /* CFNetwork.framework */; };
 		3A3336BF19C00041000A5B90 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */; };
 		3A3336C119C0004C000A5B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */; };
@@ -89,6 +94,16 @@
 		3A10ED6619AA082800A3E05B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3A11007919C5AF070081E93E /* SRMonthPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRMonthPicker.h; path = ../vlogmb/SRMonthPicker.h; sourceTree = "<group>"; };
 		3A11007A19C5AF070081E93E /* SRMonthPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRMonthPicker.m; path = ../vlogmb/SRMonthPicker.m; sourceTree = "<group>"; };
+		3A11023A19C7DA540081E93E /* ASFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFLabel.h; sourceTree = "<group>"; };
+		3A11023B19C7DA540081E93E /* ASFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFLabel.m; sourceTree = "<group>"; };
+		3A11023C19C7DA540081E93E /* ASFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableView.h; sourceTree = "<group>"; };
+		3A11023D19C7DA540081E93E /* ASFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableView.m; sourceTree = "<group>"; };
+		3A11023E19C7DA540081E93E /* ASFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableViewCell.h; sourceTree = "<group>"; };
+		3A11023F19C7DA540081E93E /* ASFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableViewCell.m; sourceTree = "<group>"; };
+		3A11024019C7DA540081E93E /* ASFTableViewPrivateGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableViewPrivateGlobals.h; sourceTree = "<group>"; };
+		3A11024119C7DA540081E93E /* ASFTableViewPrivateGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableViewPrivateGlobals.m; sourceTree = "<group>"; };
+		3A11024219C7DA540081E93E /* ASFTableViewPublicGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFTableViewPublicGlobals.h; sourceTree = "<group>"; };
+		3A11024319C7DA540081E93E /* ASFTableViewPublicGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFTableViewPublicGlobals.m; sourceTree = "<group>"; };
 		3A3336BC19C0002A000A5B90 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -192,6 +207,7 @@
 		3A10ED2B19AA075600A3E05B = {
 			isa = PBXGroup;
 			children = (
+				3A11023919C7DA540081E93E /* ASFTableView */,
 				3A6B68FB19C51ECD00F2A249 /* PNLineChart */,
 				3A10ED3D19AA075600A3E05B /* vlogmb */,
 				3A10ED5619AA075600A3E05B /* vlogmbTests */,
@@ -290,6 +306,23 @@
 				3A10ED5919AA075600A3E05B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A11023919C7DA540081E93E /* ASFTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3A11023A19C7DA540081E93E /* ASFLabel.h */,
+				3A11023B19C7DA540081E93E /* ASFLabel.m */,
+				3A11023C19C7DA540081E93E /* ASFTableView.h */,
+				3A11023D19C7DA540081E93E /* ASFTableView.m */,
+				3A11023E19C7DA540081E93E /* ASFTableViewCell.h */,
+				3A11023F19C7DA540081E93E /* ASFTableViewCell.m */,
+				3A11024019C7DA540081E93E /* ASFTableViewPrivateGlobals.h */,
+				3A11024119C7DA540081E93E /* ASFTableViewPrivateGlobals.m */,
+				3A11024219C7DA540081E93E /* ASFTableViewPublicGlobals.h */,
+				3A11024319C7DA540081E93E /* ASFTableViewPublicGlobals.m */,
+			);
+			path = ASFTableView;
 			sourceTree = "<group>";
 		};
 		3A3336C919C05521000A5B90 /* AFNetworking */ = {
@@ -465,10 +498,13 @@
 				3A54FEEC19B84E4000D2648A /* UMOverdueUnhandleViewController.m in Sources */,
 				3A3336F619C05521000A5B90 /* AFURLResponseSerialization.m in Sources */,
 				3A11007B19C5AF070081E93E /* SRMonthPicker.m in Sources */,
+				3A11024519C7DA540081E93E /* ASFTableView.m in Sources */,
 				3A3336F419C05521000A5B90 /* AFURLConnectionOperation.m in Sources */,
+				3A11024819C7DA540081E93E /* ASFTableViewPublicGlobals.m in Sources */,
 				3A54FEE919B84E0D00D2648A /* UMCurrentYearBizViewController.m in Sources */,
 				3A54FEDA19B84B9C00D2648A /* UMTodayBizViewController.m in Sources */,
 				3A3336FD19C05521000A5B90 /* UIProgressView+AFNetworking.m in Sources */,
+				3A11024419C7DA540081E93E /* ASFLabel.m in Sources */,
 				3A3336F019C05521000A5B90 /* AFHTTPRequestOperationManager.m in Sources */,
 				3A54FEE619B84DF900D2648A /* UMCurrentMonthBizViewController.m in Sources */,
 				3A3336F319C05521000A5B90 /* AFSecurityPolicy.m in Sources */,
@@ -476,9 +512,11 @@
 				3A3336C819C00117000A5B90 /* UMLoginViewController.m in Sources */,
 				3A3336F519C05521000A5B90 /* AFURLRequestSerialization.m in Sources */,
 				3A3336F219C05521000A5B90 /* AFNetworkReachabilityManager.m in Sources */,
+				3A11024619C7DA540081E93E /* ASFTableViewCell.m in Sources */,
 				3A54FEF519B84E9A00D2648A /* UMOverdue30UnWriteoffReceiveViewController.m in Sources */,
 				3A6B690119C51ECD00F2A249 /* PNPlot.m in Sources */,
 				3A3336FC19C05521000A5B90 /* UIImageView+AFNetworking.m in Sources */,
+				3A11024719C7DA540081E93E /* ASFTableViewPrivateGlobals.m in Sources */,
 				3A54FEF819B84EC400D2648A /* UMOverdue60UnWriteoffReceiveViewController.m in Sources */,
 				3A10ED4419AA075600A3E05B /* main.m in Sources */,
 				3A3336EF19C05521000A5B90 /* AFHTTPRequestOperation.m in Sources */,

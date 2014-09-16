@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ASFTableView.h"
 @interface UMAllUnWriteoffPayViewController : UIViewController
+@property (weak, nonatomic) IBOutlet ASFTableView *mASFTableView;
 
 @end
