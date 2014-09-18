@@ -11,6 +11,7 @@
 @interface UMAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSNumber *branchcompanyid;
+@property (strong, nonatomic) NSNumber *accountid;
 @property (strong, nonatomic) NSString *username;
 +(NSString *) basePath;
 @end

@@ -39,9 +39,11 @@
         {
             //在全局变量中保存用户所在分公司id
             NSNumber *branchcompanyid=(NSNumber *)[json objectForKey:@"branchcompanyid"];
+            NSNumber *accountid=(NSNumber *)[json objectForKey:@"accountid"];
             UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
             app.branchcompanyid=branchcompanyid;
             app.username=uname;
+            app.accountid=accountid;
             //如果选择了记住密码，则把用户名和密码保存着文件中
             if ([self.remember isOn]) {
                 //NSMutableArray *array=[[NSMutableArray alloc] init];
