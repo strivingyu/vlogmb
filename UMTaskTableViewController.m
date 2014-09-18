@@ -12,7 +12,6 @@
 #import "UMTaskTableViewCell.h"
 
 @interface UMTaskTableViewController ()
-
 @end
 
 @implementation UMTaskTableViewController
@@ -108,11 +107,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSString *type;
-    NSString *workno;
+    
     
     type = [[self.taskList objectAtIndex:indexPath.row] objectForKey:@"type"];
-    workno = [[self.taskList objectAtIndex:indexPath.row] objectForKey:@"type"];
-    
+    self.workno = [[self.taskList objectAtIndex:indexPath.row] objectForKey:@"workno"];
+    self.denominated=[[self.taskList objectAtIndex:indexPath.row] objectForKey:@"denominated"];
+    self.memo=[[self.taskList objectAtIndex:indexPath.row] objectForKey:@"memo"];
     if ([type isEqualToString:@"空运下单审核"]) {
         [self performSegueWithIdentifier:@"AuditAirorder" sender:self];
     }
@@ -180,7 +180,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -188,7 +188,12 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+   
+    UIViewController *view = segue.destinationViewController;
+    [view setValue:self.workno forKey:@"workno"];
+    [view setValue:self.denominated forKey:@"denominated"];
+    [view setValue:self.memo forKey:@"memo"];
 }
-*/
+
 
 @end

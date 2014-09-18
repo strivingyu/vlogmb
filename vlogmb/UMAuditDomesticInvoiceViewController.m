@@ -7,6 +7,8 @@
 //
 
 #import "UMAuditDomesticInvoiceViewController.h"
+#import "UMAppDelegate.h"
+#import "AFNetworking.h"
 
 @interface UMAuditDomesticInvoiceViewController ()
 
@@ -27,7 +29,37 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+     [self getDomesticInvoiceByWorknoAndDenominated];
 }
+-(void) getDomesticInvoiceByWorknoAndDenominated
+{
+    NSString *string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!getByWorknoAndDenominated.action?workno="] stringByAppendingString:self.workno] stringByAppendingString:@"&denominated="] stringByAppendingString:[self.denominated stringValue]];
+    NSURL *url=[NSURL URLWithString:string];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+    // operation.responseSerializer=[AFJSONResponseSerializer serializer];
+    operation.responseSerializer=[AFHTTPResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        NSData *responseData=(NSData *)responseObject;
+        NSArray *json=[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        id airorderInvoice=[json objectAtIndex:0];
+        self.tfWorkno.text=[airorderInvoice objectForKey:@"workno"];
+        self.tfTitle.text=[airorderInvoice objectForKey:@"title"];
+        self.tvDetail.text=[airorderInvoice objectForKey:@"detail"];
+        self.tvOthers.text=[airorderInvoice objectForKey:@"memo"];
+        self.serialno=[airorderInvoice objectForKey:@"serialno"];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    [operation start];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -46,4 +78,38 @@
 }
 */
 
+- (IBAction)pass:(id)sender {
+    NSString *string;
+    if([self.memo isEqualToString:@"bizdomestic"])
+    {
+        string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!bizPass.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo];
+    }
+    else
+    {
+        UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
+        NSNumber *accountid= app.accountid;
+         string=[[[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!finPass.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo] stringByAppendingString:@"&accountid="] stringByAppendingString:[accountid stringValue]];
+    }
+    NSURL *url=[NSURL URLWithString:string];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+    // operation.responseSerializer=[AFJSONResponseSerializer serializer];
+    operation.responseSerializer=[AFHTTPResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"操作成功"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    [operation start];
+    
+}
+
+- (IBAction)refuse:(id)sender {
+}
 @end

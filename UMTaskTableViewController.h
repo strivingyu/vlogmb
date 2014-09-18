@@ -10,4 +10,7 @@
 
 @interface UMTaskTableViewController : UITableViewController
 @property(nonatomic,retain) NSArray *taskList;
+@property (strong, nonatomic) NSString *workno;
+@property (strong, nonatomic) NSNumber *denominated;
+@property (strong, nonatomic) NSString *memo;
 @end
