@@ -133,13 +133,16 @@
         [self performSegueWithIdentifier:@"AuditDomesticInvoice" sender:self];    }
     else if([type isEqualToString:@"整单审核"])
     {
-        [self performSegueWithIdentifier:@"AuditWholeAirorder" sender:self];    }
+       // [self performSegueWithIdentifier:@"AuditWholeAirorder" sender:self];
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"手机版暂不支持该类型任务，请使用PC版操作" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];    }
 
     else
     {
-        
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"手机版暂不支持该类型任务，请使用PC版操作" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
     }
-    }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
