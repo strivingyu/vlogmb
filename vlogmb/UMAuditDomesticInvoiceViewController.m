@@ -105,7 +105,7 @@
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"操作成功"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alertView show];
-            [self dismissModalViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -151,7 +151,7 @@
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"操作成功"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alertView show];
-            [self dismissModalViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];

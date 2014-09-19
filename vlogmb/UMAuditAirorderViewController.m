@@ -9,6 +9,7 @@
 #import "UMAuditAirorderViewController.h"
 #import "UMAppDelegate.h"
 #import "AFNetworking.h"
+#import "DXAlertView.h"
 @interface UMAuditAirorderViewController ()
 
 @end
@@ -86,8 +87,9 @@
 */
 
 - (IBAction)pass:(id)sender {
+    
 }
 
 - (IBAction)refuse:(id)sender {
-}
+   }
 @end
