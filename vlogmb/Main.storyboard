@@ -511,7 +511,7 @@
                         <segue destination="fer-Ra-31W" kind="push" identifier="AuditDomesticAirordercost" id="1fn-f0-OiP"/>
                         <segue destination="rbD-x2-x46" kind="push" identifier="AuditForeignAirordercost" id="ZlY-bD-hv0"/>
                         <segue destination="XfP-sg-vcP" kind="push" identifier="AuditWholeAirorder" id="Kjm-uO-I12"/>
-                        <segue destination="CBh-Se-wma" kind="push" identifier="AuditDomesticInvoice" id="ZpU-Vr-ta4"/>
+                        <segue destination="CBh-Se-wma" kind="modal" identifier="AuditDomesticInvoice" id="ZpU-Vr-ta4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Q5-kl-LHd" userLabel="First Responder" sceneMemberID="firstResponder"/>

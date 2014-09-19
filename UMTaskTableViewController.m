@@ -141,6 +141,11 @@
     }
     }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self listTask];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -194,6 +199,7 @@
     [view setValue:self.denominated forKey:@"denominated"];
     [view setValue:self.memo forKey:@"memo"];
 }
+
 
 
 @end

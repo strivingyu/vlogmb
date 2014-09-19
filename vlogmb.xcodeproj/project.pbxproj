@@ -31,6 +31,11 @@
 		3A2648C019CAC22200379FEE /* UMAuditForeignAirordercostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2648BF19CAC22200379FEE /* UMAuditForeignAirordercostViewController.m */; };
 		3A2648C319CAC24100379FEE /* UMAuditDomesticInvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2648C219CAC24100379FEE /* UMAuditDomesticInvoiceViewController.m */; };
 		3A2648C619CAC25400379FEE /* UMAuditWholeAirorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2648C519CAC25400379FEE /* UMAuditWholeAirorderViewController.m */; };
+		3A2648CE19CBAD5000379FEE /* btn_close_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648C819CBAD4F00379FEE /* btn_close_normal.png */; };
+		3A2648CF19CBAD5000379FEE /* btn_close_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648C919CBAD4F00379FEE /* btn_close_normal@2x.png */; };
+		3A2648D019CBAD5000379FEE /* btn_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648CA19CBAD4F00379FEE /* btn_close_selected.png */; };
+		3A2648D119CBAD5000379FEE /* btn_close_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648CB19CBAD4F00379FEE /* btn_close_selected@2x.png */; };
+		3A2648D219CBAD5000379FEE /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2648CD19CBAD5000379FEE /* DXAlertView.m */; };
 		3A3336BD19C0002A000A5B90 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BC19C0002A000A5B90 /* CFNetwork.framework */; };
 		3A3336BF19C00041000A5B90 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */; };
 		3A3336C119C0004C000A5B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */; };
@@ -123,6 +128,12 @@
 		3A2648C219CAC24100379FEE /* UMAuditDomesticInvoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMAuditDomesticInvoiceViewController.m; sourceTree = "<group>"; };
 		3A2648C419CAC25400379FEE /* UMAuditWholeAirorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMAuditWholeAirorderViewController.h; sourceTree = "<group>"; };
 		3A2648C519CAC25400379FEE /* UMAuditWholeAirorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMAuditWholeAirorderViewController.m; sourceTree = "<group>"; };
+		3A2648C819CBAD4F00379FEE /* btn_close_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_normal.png; sourceTree = "<group>"; };
+		3A2648C919CBAD4F00379FEE /* btn_close_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_normal@2x.png"; sourceTree = "<group>"; };
+		3A2648CA19CBAD4F00379FEE /* btn_close_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_selected.png; sourceTree = "<group>"; };
+		3A2648CB19CBAD4F00379FEE /* btn_close_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_selected@2x.png"; sourceTree = "<group>"; };
+		3A2648CC19CBAD4F00379FEE /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
+		3A2648CD19CBAD5000379FEE /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
 		3A3336BC19C0002A000A5B90 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -234,6 +245,7 @@
 		3A10ED2B19AA075600A3E05B = {
 			isa = PBXGroup;
 			children = (
+				3A2648C719CBAD4F00379FEE /* Vendor */,
 				3A11023919C7DA540081E93E /* ASFTableView */,
 				3A6B68FB19C51ECD00F2A249 /* PNLineChart */,
 				3A10ED3D19AA075600A3E05B /* vlogmb */,
@@ -368,6 +380,19 @@
 				3A11024319C7DA540081E93E /* ASFTableViewPublicGlobals.m */,
 			);
 			path = ASFTableView;
+			sourceTree = "<group>";
+		};
+		3A2648C719CBAD4F00379FEE /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3A2648C819CBAD4F00379FEE /* btn_close_normal.png */,
+				3A2648C919CBAD4F00379FEE /* btn_close_normal@2x.png */,
+				3A2648CA19CBAD4F00379FEE /* btn_close_selected.png */,
+				3A2648CB19CBAD4F00379FEE /* btn_close_selected@2x.png */,
+				3A2648CC19CBAD4F00379FEE /* DXAlertView.h */,
+				3A2648CD19CBAD5000379FEE /* DXAlertView.m */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		3A3336C919C05521000A5B90 /* AFNetworking */ = {
@@ -512,9 +537,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2648D119CBAD5000379FEE /* btn_close_selected@2x.png in Resources */,
+				3A2648CE19CBAD5000379FEE /* btn_close_normal.png in Resources */,
 				3A10ED6719AA082800A3E05B /* Main.storyboard in Resources */,
+				3A2648D019CBAD5000379FEE /* btn_close_selected.png in Resources */,
 				3A10ED4219AA075600A3E05B /* InfoPlist.strings in Resources */,
 				3A10ED4A19AA075600A3E05B /* Images.xcassets in Resources */,
+				3A2648CF19CBAD5000379FEE /* btn_close_normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +574,7 @@
 				3A10ED4819AA075600A3E05B /* UMAppDelegate.m in Sources */,
 				3A54FEEC19B84E4000D2648A /* UMOverdueUnhandleViewController.m in Sources */,
 				3A3336F619C05521000A5B90 /* AFURLResponseSerialization.m in Sources */,
+				3A2648D219CBAD5000379FEE /* DXAlertView.m in Sources */,
 				3A11007B19C5AF070081E93E /* SRMonthPicker.m in Sources */,
 				3A11024519C7DA540081E93E /* ASFTableView.m in Sources */,
 				3A3336F419C05521000A5B90 /* AFURLConnectionOperation.m in Sources */,

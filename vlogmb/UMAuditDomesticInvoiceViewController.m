@@ -9,6 +9,7 @@
 #import "UMAuditDomesticInvoiceViewController.h"
 #import "UMAppDelegate.h"
 #import "AFNetworking.h"
+#import "DXAlertView.h"
 
 @interface UMAuditDomesticInvoiceViewController ()
 
@@ -79,37 +80,93 @@
 */
 
 - (IBAction)pass:(id)sender {
-    NSString *string;
-    if([self.memo isEqualToString:@"bizdomestic"])
-    {
-        string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!bizPass.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo];
-    }
-    else
-    {
-        UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
-        NSNumber *accountid= app.accountid;
-         string=[[[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!finPass.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo] stringByAppendingString:@"&accountid="] stringByAppendingString:[accountid stringValue]];
-    }
-    NSURL *url=[NSURL URLWithString:string];
-    NSURLRequest *request=[NSURLRequest requestWithURL:url];
     
-    AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
-    // operation.responseSerializer=[AFJSONResponseSerializer serializer];
-    operation.responseSerializer=[AFHTTPResponseSerializer serializer];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"操作成功"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alertView show];
+    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示信息" contentText:@"确定通过审核？" leftButtonTitle:@"确定" rightButtonTitle:@"取消"];
+    [alert show];
+    alert.leftBlock = ^() {
+        NSString *string;
+        if([self.memo isEqualToString:@"bizdomestic"])
+        {
+            string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!bizPass.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo];
+        }
+        else
+        {
+            UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
+            NSNumber *accountid= app.accountid;
+            string=[[[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!finPass.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo] stringByAppendingString:@"&accountid="] stringByAppendingString:[accountid stringValue]];
+        }
+        NSURL *url=[NSURL URLWithString:string];
+        NSURLRequest *request=[NSURLRequest requestWithURL:url];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alertView show];
-    }];
+        AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+        // operation.responseSerializer=[AFJSONResponseSerializer serializer];
+        operation.responseSerializer=[AFHTTPResponseSerializer serializer];
+        
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"操作成功"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+            [self dismissModalViewControllerAnimated:YES];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+        }];
+        
+        [operation start];
+    };
+    alert.rightBlock = ^() {
+       // NSLog(@"right button clicked");
+    };
+    alert.dismissBlock = ^() {
+      //  NSLog(@"Do something interesting after dismiss block");
+    };
     
-    [operation start];
+    
     
 }
 
 - (IBAction)refuse:(id)sender {
+    
+    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"提示信息" contentText:@"确定退回？" leftButtonTitle:@"确定" rightButtonTitle:@"取消"];
+    [alert show];
+    alert.leftBlock = ^() {
+        NSString *string;
+        if([self.memo isEqualToString:@"bizdomestic"])
+        {
+            string=[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!bizRefuse.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo];
+        }
+        else
+        {
+            UMAppDelegate *app=(UMAppDelegate *)[UIApplication sharedApplication].delegate;
+            NSNumber *accountid= app.accountid;
+            string=[[[[[[[UMAppDelegate basePath] stringByAppendingString:@"airorderInvoiceAction!finRefuse.action?serialno="] stringByAppendingString:self.serialno] stringByAppendingString:@"&type="] stringByAppendingString:self.memo] stringByAppendingString:@"&accountid="] stringByAppendingString:[accountid stringValue]];
+        }
+        NSURL *url=[NSURL URLWithString:string];
+        NSURLRequest *request=[NSURLRequest requestWithURL:url];
+        
+        AFHTTPRequestOperation *operation=[[AFHTTPRequestOperation alloc]initWithRequest:request];
+        // operation.responseSerializer=[AFJSONResponseSerializer serializer];
+        operation.responseSerializer=[AFHTTPResponseSerializer serializer];
+        
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"操作成功"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+            [self dismissModalViewControllerAnimated:YES];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
+        }];
+        
+        [operation start];
+    };
+    alert.rightBlock = ^() {
+        // NSLog(@"right button clicked");
+    };
+    alert.dismissBlock = ^() {
+        //  NSLog(@"Do something interesting after dismiss block");
+    };
+    
+
 }
 @end
