@@ -36,6 +36,14 @@
 		3A2648D019CBAD5000379FEE /* btn_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648CA19CBAD4F00379FEE /* btn_close_selected.png */; };
 		3A2648D119CBAD5000379FEE /* btn_close_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648CB19CBAD4F00379FEE /* btn_close_selected@2x.png */; };
 		3A2648D219CBAD5000379FEE /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2648CD19CBAD5000379FEE /* DXAlertView.m */; };
+		3A2648D519CBBA5E00379FEE /* UMDesignateThirdPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2648D419CBBA5E00379FEE /* UMDesignateThirdPartyViewController.m */; };
+		3A2648DF19CC2BE900379FEE /* AFPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2648D819CC2BE900379FEE /* AFPickerView.m */; };
+		3A2648E019CC2BE900379FEE /* PickerBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648D919CC2BE900379FEE /* PickerBG.png */; };
+		3A2648E119CC2BE900379FEE /* PickerBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DA19CC2BE900379FEE /* PickerBG@2x.png */; };
+		3A2648E219CC2BE900379FEE /* pickerGlass.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DB19CC2BE900379FEE /* pickerGlass.png */; };
+		3A2648E319CC2BE900379FEE /* pickerGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DC19CC2BE900379FEE /* pickerGlass@2x.png */; };
+		3A2648E419CC2BE900379FEE /* PickerShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DD19CC2BE900379FEE /* PickerShadow.png */; };
+		3A2648E519CC2BE900379FEE /* PickerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DE19CC2BE900379FEE /* PickerShadow@2x.png */; };
 		3A3336BD19C0002A000A5B90 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BC19C0002A000A5B90 /* CFNetwork.framework */; };
 		3A3336BF19C00041000A5B90 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */; };
 		3A3336C119C0004C000A5B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */; };
@@ -134,6 +142,16 @@
 		3A2648CB19CBAD4F00379FEE /* btn_close_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_selected@2x.png"; sourceTree = "<group>"; };
 		3A2648CC19CBAD4F00379FEE /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
 		3A2648CD19CBAD5000379FEE /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
+		3A2648D319CBBA5E00379FEE /* UMDesignateThirdPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMDesignateThirdPartyViewController.h; sourceTree = "<group>"; };
+		3A2648D419CBBA5E00379FEE /* UMDesignateThirdPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMDesignateThirdPartyViewController.m; sourceTree = "<group>"; };
+		3A2648D719CC2BE900379FEE /* AFPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPickerView.h; sourceTree = "<group>"; };
+		3A2648D819CC2BE900379FEE /* AFPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPickerView.m; sourceTree = "<group>"; };
+		3A2648D919CC2BE900379FEE /* PickerBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickerBG.png; sourceTree = "<group>"; };
+		3A2648DA19CC2BE900379FEE /* PickerBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PickerBG@2x.png"; sourceTree = "<group>"; };
+		3A2648DB19CC2BE900379FEE /* pickerGlass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerGlass.png; sourceTree = "<group>"; };
+		3A2648DC19CC2BE900379FEE /* pickerGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerGlass@2x.png"; sourceTree = "<group>"; };
+		3A2648DD19CC2BE900379FEE /* PickerShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickerShadow.png; sourceTree = "<group>"; };
+		3A2648DE19CC2BE900379FEE /* PickerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PickerShadow@2x.png"; sourceTree = "<group>"; };
 		3A3336BC19C0002A000A5B90 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -245,6 +263,7 @@
 		3A10ED2B19AA075600A3E05B = {
 			isa = PBXGroup;
 			children = (
+				3A2648D619CC2BE900379FEE /* AFPickerView */,
 				3A2648C719CBAD4F00379FEE /* Vendor */,
 				3A11023919C7DA540081E93E /* ASFTableView */,
 				3A6B68FB19C51ECD00F2A249 /* PNLineChart */,
@@ -332,6 +351,8 @@
 				3A2648C219CAC24100379FEE /* UMAuditDomesticInvoiceViewController.m */,
 				3A2648C419CAC25400379FEE /* UMAuditWholeAirorderViewController.h */,
 				3A2648C519CAC25400379FEE /* UMAuditWholeAirorderViewController.m */,
+				3A2648D319CBBA5E00379FEE /* UMDesignateThirdPartyViewController.h */,
+				3A2648D419CBBA5E00379FEE /* UMDesignateThirdPartyViewController.m */,
 			);
 			path = vlogmb;
 			sourceTree = "<group>";
@@ -393,6 +414,21 @@
 				3A2648CD19CBAD5000379FEE /* DXAlertView.m */,
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		3A2648D619CC2BE900379FEE /* AFPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				3A2648D719CC2BE900379FEE /* AFPickerView.h */,
+				3A2648D819CC2BE900379FEE /* AFPickerView.m */,
+				3A2648D919CC2BE900379FEE /* PickerBG.png */,
+				3A2648DA19CC2BE900379FEE /* PickerBG@2x.png */,
+				3A2648DB19CC2BE900379FEE /* pickerGlass.png */,
+				3A2648DC19CC2BE900379FEE /* pickerGlass@2x.png */,
+				3A2648DD19CC2BE900379FEE /* PickerShadow.png */,
+				3A2648DE19CC2BE900379FEE /* PickerShadow@2x.png */,
+			);
+			path = AFPickerView;
 			sourceTree = "<group>";
 		};
 		3A3336C919C05521000A5B90 /* AFNetworking */ = {
@@ -539,10 +575,16 @@
 			files = (
 				3A2648D119CBAD5000379FEE /* btn_close_selected@2x.png in Resources */,
 				3A2648CE19CBAD5000379FEE /* btn_close_normal.png in Resources */,
+				3A2648E319CC2BE900379FEE /* pickerGlass@2x.png in Resources */,
+				3A2648E119CC2BE900379FEE /* PickerBG@2x.png in Resources */,
 				3A10ED6719AA082800A3E05B /* Main.storyboard in Resources */,
 				3A2648D019CBAD5000379FEE /* btn_close_selected.png in Resources */,
 				3A10ED4219AA075600A3E05B /* InfoPlist.strings in Resources */,
+				3A2648E419CC2BE900379FEE /* PickerShadow.png in Resources */,
+				3A2648E219CC2BE900379FEE /* pickerGlass.png in Resources */,
 				3A10ED4A19AA075600A3E05B /* Images.xcassets in Resources */,
+				3A2648E019CC2BE900379FEE /* PickerBG.png in Resources */,
+				3A2648E519CC2BE900379FEE /* PickerShadow@2x.png in Resources */,
 				3A2648CF19CBAD5000379FEE /* btn_close_normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +608,7 @@
 				3A2648BD19CAC20D00379FEE /* UMAuditDomesticAirordercostViewController.m in Sources */,
 				3A54FEFB19B84EDD00D2648A /* UMAllUnWriteoffPayViewController.m in Sources */,
 				3A3336F919C05521000A5B90 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				3A2648DF19CC2BE900379FEE /* AFPickerView.m in Sources */,
 				3A3336FE19C05521000A5B90 /* UIRefreshControl+AFNetworking.m in Sources */,
 				3A3336FB19C05521000A5B90 /* UIButton+AFNetworking.m in Sources */,
 				3A3336FA19C05521000A5B90 /* UIAlertView+AFNetworking.m in Sources */,
@@ -588,6 +631,7 @@
 				3A3336F319C05521000A5B90 /* AFSecurityPolicy.m in Sources */,
 				3A54FEE319B84DC900D2648A /* UMDesignateMonthBizViewController.m in Sources */,
 				3A3336C819C00117000A5B90 /* UMLoginViewController.m in Sources */,
+				3A2648D519CBBA5E00379FEE /* UMDesignateThirdPartyViewController.m in Sources */,
 				3A3336F519C05521000A5B90 /* AFURLRequestSerialization.m in Sources */,
 				3A3336F219C05521000A5B90 /* AFNetworkReachabilityManager.m in Sources */,
 				3A11024619C7DA540081E93E /* ASFTableViewCell.m in Sources */,

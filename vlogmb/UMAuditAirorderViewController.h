@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UMAuditAirorderViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *tfWorkno;
 @property (weak, nonatomic) IBOutlet UITextField *dfShipper;
 @property (weak, nonatomic) IBOutlet UITextField *dfDelegateDate;
@@ -26,4 +27,7 @@
 - (IBAction)pass:(id)sender;
 - (IBAction)refuse:(id)sender;
 @property (strong, nonatomic) NSString *workno;
+@property (strong, nonatomic) NSNumber *denominated;
+@property (strong, nonatomic) NSString *memo;
+@property (strong, nonatomic) NSString *serialno;
 @end

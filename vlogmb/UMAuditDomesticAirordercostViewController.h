@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ASFTableView.h"
 @interface UMAuditDomesticAirordercostViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet ASFTableView *mASFTableView;
+- (IBAction)pass:(id)sender;
+- (IBAction)refuse:(id)sender;
+@property (strong, nonatomic) NSString *workno;
+@property (strong, nonatomic) NSNumber *denominated;
+@property (strong, nonatomic) NSString *memo;
+@property (strong, nonatomic) NSString *serialno;
 @end

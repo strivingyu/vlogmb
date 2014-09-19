@@ -32,6 +32,12 @@
     [self getAirorderByWorkno];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+ //   [super viewDidAppear:<#animated#>];
+    self.scrollView.contentSize=self.view.frame.size;
+}
+
 -(void) getAirorderByWorkno
 {
    NSString *string=[[[UMAppDelegate basePath] stringByAppendingString:@"airorderAction!getByWorkno.action?workno="] stringByAppendingString:self.workno];
@@ -54,11 +60,13 @@
         self.dfDestinationPort.text=[airorder objectForKey:@"destinationport"];
         self.dfGoodsDescription.text=[airorder objectForKey:@"goodsdescription"];
         self.dfMarks.text=[airorder objectForKey:@"marknumbers"];
-        self.dfNotifyParty.text=[airorder objectForKey:@"marknumbers"];
+        self.dfNotifyParty.text=[airorder objectForKey:@"notifyparty"];
         self.dfSender.text=[airorder objectForKey:@"sender"];
-        self.dfTotalGoodsno.text=[airorder objectForKey:@"totalgoodsno"];
+        self.dfTotalGoodsno.text=[[airorder objectForKey:@"totalgoodsno"] stringValue];
         self.dfTotalWeight.text=[airorder objectForKey:@"totalweight"];
         self.dfVolume.text=[airorder objectForKey:@"volume"];
+        self.tfWorkno.text=[airorder objectForKey:@"workno"];
+        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
