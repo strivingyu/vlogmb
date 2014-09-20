@@ -55,8 +55,24 @@
         NSError *error;
         NSData *responseData=(NSData *)responseObject;
         self.taskList=[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        NSString *countStr=[NSString stringWithFormat:@"%lu",self.taskList.count];
         [self.tableView reloadData];
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        //增加本地图标通知
+        UILocalNotification *notification=[[UILocalNotification alloc] init];
+        NSString *tip=@"您有";
+        notification.alertBody=[[tip stringByAppendingString:countStr] stringByAppendingString:@"个任务未处理"];
+        notification.applicationIconBadgeNumber=self.taskList.count;
+        notification.soundName= UILocalNotificationDefaultSoundName;
+      //  notification.alertBody=@"通知内容";//提示信息 弹出提示框
+      //  notification.alertAction = @"打开";  //提示框按钮
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        
+        
+        //
+        self.navigationController.tabBarItem.badgeValue=countStr;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alertView=[[UIAlertView alloc] initWithTitle: @"提示信息" message:@"网络不通"delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alertView show];
     }];

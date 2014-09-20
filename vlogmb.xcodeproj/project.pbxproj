@@ -44,6 +44,9 @@
 		3A2648E319CC2BE900379FEE /* pickerGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DC19CC2BE900379FEE /* pickerGlass@2x.png */; };
 		3A2648E419CC2BE900379FEE /* PickerShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DD19CC2BE900379FEE /* PickerShadow.png */; };
 		3A2648E519CC2BE900379FEE /* PickerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648DE19CC2BE900379FEE /* PickerShadow@2x.png */; };
+		3A2648E919CC4B7800379FEE /* search_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648E619CC4B7800379FEE /* search_32.png */; };
+		3A2648EA19CC4B7800379FEE /* setting_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648E719CC4B7800379FEE /* setting_32.png */; };
+		3A2648EB19CC4B7800379FEE /* task_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2648E819CC4B7800379FEE /* task_32.png */; };
 		3A3336BD19C0002A000A5B90 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BC19C0002A000A5B90 /* CFNetwork.framework */; };
 		3A3336BF19C00041000A5B90 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */; };
 		3A3336C119C0004C000A5B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */; };
@@ -152,6 +155,9 @@
 		3A2648DC19CC2BE900379FEE /* pickerGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pickerGlass@2x.png"; sourceTree = "<group>"; };
 		3A2648DD19CC2BE900379FEE /* PickerShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickerShadow.png; sourceTree = "<group>"; };
 		3A2648DE19CC2BE900379FEE /* PickerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PickerShadow@2x.png"; sourceTree = "<group>"; };
+		3A2648E619CC4B7800379FEE /* search_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_32.png; sourceTree = "<group>"; };
+		3A2648E719CC4B7800379FEE /* setting_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_32.png; sourceTree = "<group>"; };
+		3A2648E819CC4B7800379FEE /* task_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task_32.png; sourceTree = "<group>"; };
 		3A3336BC19C0002A000A5B90 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3A3336BE19C00041000A5B90 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3A3336C019C0004C000A5B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -419,6 +425,9 @@
 		3A2648D619CC2BE900379FEE /* AFPickerView */ = {
 			isa = PBXGroup;
 			children = (
+				3A2648E619CC4B7800379FEE /* search_32.png */,
+				3A2648E719CC4B7800379FEE /* setting_32.png */,
+				3A2648E819CC4B7800379FEE /* task_32.png */,
 				3A2648D719CC2BE900379FEE /* AFPickerView.h */,
 				3A2648D819CC2BE900379FEE /* AFPickerView.m */,
 				3A2648D919CC2BE900379FEE /* PickerBG.png */,
@@ -577,8 +586,11 @@
 				3A2648CE19CBAD5000379FEE /* btn_close_normal.png in Resources */,
 				3A2648E319CC2BE900379FEE /* pickerGlass@2x.png in Resources */,
 				3A2648E119CC2BE900379FEE /* PickerBG@2x.png in Resources */,
+				3A2648EA19CC4B7800379FEE /* setting_32.png in Resources */,
+				3A2648EB19CC4B7800379FEE /* task_32.png in Resources */,
 				3A10ED6719AA082800A3E05B /* Main.storyboard in Resources */,
 				3A2648D019CBAD5000379FEE /* btn_close_selected.png in Resources */,
+				3A2648E919CC4B7800379FEE /* search_32.png in Resources */,
 				3A10ED4219AA075600A3E05B /* InfoPlist.strings in Resources */,
 				3A2648E419CC2BE900379FEE /* PickerShadow.png in Resources */,
 				3A2648E219CC2BE900379FEE /* pickerGlass.png in Resources */,

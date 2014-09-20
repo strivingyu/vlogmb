@@ -680,7 +680,7 @@
         <scene sceneID="6rM-wS-6Ny">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zyB-17-FoL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="任务" id="pXy-m7-gGm"/>
+                    <tabBarItem key="tabBarItem" title="任务" image="task_32.png" id="pXy-m7-gGm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iFk-2j-bsd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -693,7 +693,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzu-fk-65c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815" y="-2725"/>
+            <point key="canvasLocation" x="756" y="-2812"/>
         </scene>
         <!--Task Table View Controller - 任务-->
         <scene sceneID="a5P-Ss-gIZ">
@@ -726,7 +726,7 @@
         <scene sceneID="tf6-DY-zfz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2F2-0S-I7X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="查询" id="gmD-Yc-Ou9"/>
+                    <tabBarItem key="tabBarItem" title="查询" image="search_32.png" id="gmD-Yc-Ou9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YIk-zn-oEl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -745,7 +745,7 @@
         <scene sceneID="FRg-6Q-dJq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0V4-1b-GC6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" id="O8Z-AH-8hM"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="setting_32.png" id="O8Z-AH-8hM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hDQ-so-vez">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -824,7 +824,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fe2-KX-XJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="177" y="-2114"/>
+            <point key="canvasLocation" x="152" y="-2401"/>
         </scene>
         <!--Modify Password View Controller - 修改密码-->
         <scene sceneID="KBq-Wd-noN">
@@ -1649,6 +1649,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="2359" y="-1428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search_32.png" width="32" height="32"/>
+        <image name="setting_32.png" width="32" height="32"/>
+        <image name="task_32.png" width="33" height="31"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
